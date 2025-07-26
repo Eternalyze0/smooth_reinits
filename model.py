@@ -169,9 +169,11 @@ class GPT(nn.Module):
 
     def forward(self, idx, targets=None):
         with torch.no_grad():
-            self.scaling_factor = 1e-3
-            for name, param in self.named_parameters():
-                if "bias" in name:
+            self.scaling_factor = 1e-2
+            for name, param in list(self.named_parameters())[-4:-2]:
+                print(name)
+                # if not "attn" in name and "bias" in name:
+                if True:
                     param.data.add_(torch.randn_like(param) * param * self.scaling_factor)
             self.scaling_factor *= 1.0
         device = idx.device
@@ -288,6 +290,7 @@ class GPT(nn.Module):
         use_fused = fused_available and device_type == 'cuda'
         extra_args = dict(fused=True) if use_fused else dict()
         optimizer = torch.optim.AdamW(optim_groups, lr=learning_rate, betas=betas, **extra_args)
+        # optimizer = torch.optim.SGD(optim_groups, lr=learning_rate)
         print(f"using fused AdamW: {use_fused}")
 
         return optimizer
