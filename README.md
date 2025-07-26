@@ -22,3 +22,9 @@ The last layer is injected with noise that decays over time. Good performance on
         x = self.fc3(x)
         return x
 ```
+
+## References
+
+Inspiration from https://arxiv.org/abs/2205.07802.
+
+Baseline from https://github.com/seungeunrho/minimalRL/blob/master/dqn.py.
