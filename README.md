@@ -6,7 +6,7 @@ Alternatively the middle layer is injected with (large!) noise that never decays
 
 ## nanoGPT baseline
 
-step 2000: train loss 1.7648, val loss 1.8857
+step 2000: train loss 1.7582, val loss 1.8919
 
 ## nanoGPT smooth reinits
 
