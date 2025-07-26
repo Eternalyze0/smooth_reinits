@@ -65,4 +65,6 @@ step 2000: train loss 1.7729, val loss 1.9003
 
 Inspiration from https://arxiv.org/abs/2205.07802.
 
-Baseline from https://github.com/seungeunrho/minimalRL/blob/master/dqn.py.
+DQN baseline from https://github.com/seungeunrho/minimalRL/blob/master/dqn.py.
+
+nanoGPT baseline from https://github.com/karpathy/nanoGPT.
