@@ -4,6 +4,9 @@ The last layer is injected with noise that decays over time. Good performance on
 
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/2648a262-eb37-485f-8995-77505a60d0b5" />
 
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/e68acc0c-1fff-49ac-9a0f-a76634846adc" />
+
+
 ## Code
 
 ```py
