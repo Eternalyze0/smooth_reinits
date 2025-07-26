@@ -2,7 +2,11 @@
 
 The last layer is injected with noise that decays over time. Good performance on cartpole is achieved despite epsilon being set to zero.
 
+## dqn_last_layer_decay.py
+
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/2648a262-eb37-485f-8995-77505a60d0b5" />
+
+## dqn_middle_layer_no_decay.py
 
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/e68acc0c-1fff-49ac-9a0f-a76634846adc" />
 
