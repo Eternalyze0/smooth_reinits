@@ -5,17 +5,18 @@ The last layer is injected with noise that decays over time. Good performance on
 Alternatively the middle layer is injected with (large!) noise that never decays and a skip connection is added.
 
 ## nanoGPT usage
-
+```
+replace model.py in https://github.com/karpathy/nanoGPT with the one in this repo
 python3.10 train.py config/train_shakespeare_char.py --device=cpu --compile=False --eval_iters=20 --log_interval=1 --block_size=64 --batch_size=12 --n_layer=4 --n_head=4 --n_embd=128 --max_iters=2000 --lr_decay_iters=2000 --dropout=0.0 --bias=True
-
+```
 ## nanoGPT baseline
-
+```
 step 2000: train loss 1.7562, val loss 1.9047
-
+```
 ## nanoGPT smooth reinits
-
+```
 step 2000: train loss 1.7715, val loss 1.8975
-
+```
 ## dqn_last_layer_decay.py
 
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/2648a262-eb37-485f-8995-77505a60d0b5" />
