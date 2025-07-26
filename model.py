@@ -168,10 +168,12 @@ class GPT(nn.Module):
             torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
 
     def forward(self, idx, targets=None):
-        self.scaling_factor = 1e-3
-        for param in self.parameters():
-            param.data.add_(torch.randn_like(param) * param * self.scaling_factor)
-        self.scaling_factor *= 0.5
+        with torch.no_grad():
+            self.scaling_factor = 1e-3
+            for name, param in self.named_parameters():
+                if "bias" in name:
+                    param.data.add_(torch.randn_like(param) * param * self.scaling_factor)
+            self.scaling_factor *= 1.0
         device = idx.device
         b, t = idx.size()
         assert t <= self.config.block_size, f"Cannot forward sequence of length {t}, block size is only {self.config.block_size}"
