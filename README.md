@@ -10,6 +10,8 @@ step 2000: train loss 1.7582, val loss 1.8919
 
 ## nanoGPT smooth reinits
 
+step 2000: train loss 1.7301, val loss 1.8546
+
 ## dqn_last_layer_decay.py
 
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/2648a262-eb37-485f-8995-77505a60d0b5" />
