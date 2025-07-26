@@ -32,6 +32,23 @@ Alternatively the middle layer is injected with (large!) noise that never decays
         return x
 ```
 
+```py
+    def forward(self, x):
+        if self.experimental:
+            with torch.no_grad():
+                # self.fc1.weight.data.add_(torch.randn_like(self.fc1.weight) * self.fc1.weight * self.scaling_factor)
+                self.fc2.weight.data.add_(torch.randn_like(self.fc2.weight) * self.fc2.weight * self.scaling_factor)
+                # self.fc3.weight.data.add_(torch.randn_like(self.fc3.weight) * self.fc3.weight * self.scaling_factor)
+                # self.fc1.bias.data.add_(torch.randn_like(self.fc1.bias) * self.fc1.bias * self.scaling_factor)
+                self.fc2.bias.data.add_(torch.randn_like(self.fc2.bias) * self.fc2.bias * self.scaling_factor)
+                # self.fc3.bias.data.add_(torch.randn_like(self.fc3.bias) * self.fc3.bias * self.scaling_factor)
+                self.scaling_factor *= 1.0
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x)) + x
+        x = self.fc3(x)
+        return x
+```
+
 ## References
 
 Inspiration from https://arxiv.org/abs/2205.07802.
