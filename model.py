@@ -168,9 +168,10 @@ class GPT(nn.Module):
             torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
 
     def forward(self, idx, targets=None):
-        self.scaling_factor = 1e-4
+        self.scaling_factor = 1e-3
         for param in self.parameters():
             param.data.add_(torch.randn_like(param) * param * self.scaling_factor)
+        self.scaling_factor *= 0.5
         device = idx.device
         b, t = idx.size()
         assert t <= self.config.block_size, f"Cannot forward sequence of length {t}, block size is only {self.config.block_size}"
