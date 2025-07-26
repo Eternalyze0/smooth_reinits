@@ -4,6 +4,12 @@ The last layer is injected with noise that decays over time. Good performance on
 
 Alternatively the middle layer is injected with (large!) noise that never decays and a skip connection is added.
 
+## nanoGPT baseline
+
+step 2000: train loss 1.7648, val loss 1.8857
+
+## nanoGPT smooth reinits
+
 ## dqn_last_layer_decay.py
 
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/2648a262-eb37-485f-8995-77505a60d0b5" />
