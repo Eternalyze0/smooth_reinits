@@ -17,7 +17,7 @@ step 2000: train loss 1.7562, val loss 1.9047
 ```
 ## nanoGPT smooth reinits
 ```
-step 2000: train loss 1.7658, val loss 1.8843
+step 2000: train loss 1.7722, val loss 1.8717
 ```
 ## dqn_last_layer_decay.py
 
